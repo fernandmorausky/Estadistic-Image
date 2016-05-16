@@ -134,7 +134,27 @@ body {
   .chart--design & {
     @include stagger-anim-delay(3, 4.7s, 0.2s);
   }
-
+  &[data-skill='0'] {
+    width: 0%;
+  }
+  &[data-skill='5'] {
+    width: 5%;
+  }
+  &[data-skill='10'] {
+    width: 10%;
+  }
+  &[data-skill='15'] {
+    width: 15%;
+  }
+  &[data-skill='20'] {
+    width: 20%;
+  }
+  &[data-skill='25'] {
+    width: 25%;
+  }
+  &[data-skill='30'] {
+    width: 30%;
+  }
   &[data-skill='35'] {
     width: 35%;
   }
@@ -173,6 +193,9 @@ body {
   }
   &[data-skill='95'] {
     width: 95%;
+  }
+  &[data-skill='100'] {
+    width: 100%;
   }
 }
 
