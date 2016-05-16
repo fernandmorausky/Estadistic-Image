@@ -5,6 +5,8 @@
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/function.js"></script>
+
 
 </head>
 <body>
@@ -14,15 +16,15 @@
   <div class="container">
 		<div id="carousel">
 
-			<figure><img src="img/Aji_de_gallina.png" alt="" height= "126px" width="180px"></figure>
-			<figure><img src="img/Causa_Rellena.png" alt=""  height= "126px" width="180px"></figure>
-			<figure><img src="img/Estofado_De_Pollo.jpg" alt ="" height= "126px" width="180px"></figure>
-			<figure><img src="img/Rocoto_relleno.jpg" alt=""  height= "126px" width="180px"></figure>
-			<figure><img src="img/Lomo_Saltado.jpg" alt=""  height= "126px" width="180px"></figure>
-			<figure><img src="img/Pollo_Ala_Brasa.jpg" alt=""  height= "126px" width="180px"></figure>
-			<figure><img src="img/Jalea_Mixta.jpg" alt=""  height= "126px" width="180px"></figure>
-			<figure><img src="img/Arroz_Con_Pollo.jpg" alt=""  height= "126px" width="180px"></figure>
-			<figure><img src="img/Ceviche.jpg" alt="" height= "126px" width="180px"></figure>
+			<figure><img src="img/Aji_de_gallina.png" alt="" height= "126px" width="180px" onclick="contar('ajidegallina')"></figure>
+			<figure><img src="img/Causa_Rellena.png" alt=""  height= "126px" width="180px"  onclick="contar('causarellena')"></figure>
+			<figure><img src="img/Estofado_De_Pollo.jpg" alt ="" height= "126px" width="180px" onclick="contar('estofadodepollo')"></figure>
+			<figure><img src="img/Rocoto_relleno.jpg" alt=""  height= "126px" width="180px" onclick="contar('rocotorelleno')"></figure>
+			<figure><img src="img/Lomo_Saltado.jpg" alt=""  height= "126px" width="180px" onclick="contar('lomosaltado')"></figure>
+			<figure><img src="img/Pollo_Ala_Brasa.jpg" alt=""  height= "126px" width="180px" onclick="contar('polloalabraza')"></figure>
+			<figure><img src="img/Jalea_Mixta.jpg" alt=""  height= "126px" width="180px" onclick="contar('jaleamixta')"></figure>
+			<figure><img src="img/Arroz_Con_Pollo.jpg" alt=""  height= "126px" width="180px" onclick="contar('arrozconpollo')"></figure>
+			<figure><img src="img/Ceviche.jpg" alt="" height= "126px" width="180px" onclick="contar('ceviche')"></figure>
 		</div>
 	</div>
 	<!-- -->
@@ -31,37 +33,9 @@
 	This is WIP and probably full of bugs
 -->
 <div class="skills">
-  <ul class="lines">
-    <li class="line l--0">
-      <span class="line__label title">
-        Skill level:
-      </span>
-    </li>
-    <li class="line l--25">
-      <span class="line__label">
-        The basics
-      </span>
-    </li>
-    <li class="line l--50">
-      <span class="line__label">
-        Advanced
-      </span>
-    </li>
-    <li class="line l--75">
-      <span class="line__label">
-        Seasoned
-      </span>
-    </li>
-    <li class="line l--100">
-      <span class="line__label">
-        Expert
-      </span>
-    </li>
-  </ul>
-  
   <div class="charts">
     <div class="chart chart--dev">
-      <span class="chart__title">Development</span>
+      <span class="chart__title">valores Seleccionados</span>
       <ul class="chart--horiz">
         <li class="chart__bar" data-skill="95">
           <span class="chart__label">
@@ -80,7 +54,7 @@
         </li>
         <li class="chart__bar" data-skill="65">
           <span class="chart__label">
-            Jalea Mixta
+            Rocoto relleno
           </span>
         </li>
         <li class="chart__bar" data-skill="60">
@@ -90,66 +64,37 @@
         </li>
         <li class="chart__bar" data-skill="55">
           <span class="chart__label">
-            NodeJS
+            Pollo Ala Brasa
           </span>
         </li>
         <li class="chart__bar" data-skill="50">
           <span class="chart__label">
-            Grunt / Gulp
+            Jalea Mixta
           </span>
         </li>
         <li class="chart__bar" data-skill="40">
           <span class="chart__label">
-            .NET
+            Arroz Con Pollo
           </span>
         </li>
         <li class="chart__bar" data-skill="60">
           <span class="chart__label">
-            Umbraco
+            Ceviche
           </span>
         </li>
       </ul>
-    </div>
-    
-    <div class="chart chart--prod">
-      <span class="chart__title">Productivity</span>
-      <ul class="chart--horiz">
-      <li class="chart__bar" data-skill="70">
-        <span class="chart__label">
-          Git + Github, Bitbucket & Sourcetree
-        </span>
-      </li>
-      <li class="chart__bar" data-skill="80">
-        <span class="chart__label">
-          Microsoft Office
-        </span>
-      </li>
-    </ul>
-    </div>
-    
-    <div class="chart chart--design">
-      <span class="chart__title">Design</span>
-      <ul class="chart--horiz">
-      <li class="chart__bar" data-skill="45">
-        <span class="chart__label">
-          Photoshop
-        </span>
-      </li>
-      <li class="chart__bar" data-skill="35">
-        <span class="chart__label">
-          Illustrator
-        </span>
-      </li>
-      <li class="chart__bar" data-skill="60">
-        <span class="chart__label">
-          User Experience
-        </span>
-      </li>
-    </ul>
-    </div>
+    </div> 
   </div>
 </div>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
+    <label>media</label>
+    <div id="shiva"><span class="count">200</span></div>
+
+    <label>mediana</label>
+    <div id="shiva"><span class="count">200</span></div>
+
+    <label>moda</label>
+    <div id="shiva"><span class="count">200</span></div>
 
     
 
