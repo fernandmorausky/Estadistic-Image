@@ -8,9 +8,10 @@ body {
 .skills {
   width: 80%;
   max-width: 960px;
-  height: 720px;
+  height: 400px;
   margin: auto;
   position: relative;
+  left: 20%;
 }
 
 .lines {

@@ -20,15 +20,11 @@ function	contar($li)
 		case 'rocotorelleno' 	:rocotorelleno++;	break;
 		case 'lomosaltado' 		:lomosaltado++;		break;
 		case 'polloalabraza' 	:polloalabraza++;	break;
-		case 'jaleamixta' 		:jaleamixta++;break;
-		case 'arrozconpollo' 	:arrozconpollo++;break;
-		case 'ceviche' 			:ceviche++;break;
-	}
-	//alert('Hola');
+		case 'jaleamixta' 		:jaleamixta++;		break;
+		case 'arrozconpollo' 	:arrozconpollo++;	break;
+		case 'ceviche' 			:ceviche++;			break;
+	} 
 
-	// if($('.chart__bar').attr('data-skill') == 95){
-	// 	$(this).attr('data-skill',40);
-	// }
 
 	document.getElementById('ajidegallina').dataset.skill=ajidegallina*5;
 	document.getElementById('causarellena').dataset.skill=causarellena*5;
@@ -39,23 +35,20 @@ function	contar($li)
 	document.getElementById('jaleamixta').dataset.skill=jaleamixta*5;
 	document.getElementById('arrozconpollo').dataset.skill=arrozconpollo*5;
 	document.getElementById('ceviche').dataset.skill=ceviche*5;
-	//ajidegallina.
+	 
+
+	 document.getElementById('ajidegallina').innerHTML=ajidegallina;
+	document.getElementById('causarellena').innerHTML=causarellena;
+	document.getElementById('estofadodepollo').innerHTML=estofadodepollo;
+	document.getElementById('rocotorelleno').innerHTML=rocotorelleno;
+	document.getElementById('lomosaltado').innerHTML=lomosaltado;
+	document.getElementById('polloalabraza').innerHTML=polloalabraza;
+	document.getElementById('jaleamixta').innerHTML=jaleamixta;
+	document.getElementById('arrozconpollo').innerHTML=arrozconpollo;
+	document.getElementById('ceviche').innerHTML=ceviche;
 
 
 
-
-	// var arr =  [];
-
-	//     arr["ajidegallina"]=ajidegallina;
-	//     arr["causarellena"] = causarellena;
-	//     arr["estofadodepollo"] = estofadodepollo;
-	//     arr["rocotorelleno"] = rocotorelleno;
-	//     arr["lomosaltado"] = lomosaltado;
-	//     arr["polloalabraza"] = polloalabraza;
-	//     arr["jaleamixta"] = jaleamixta;
-	//     arr["arrozconpollo"] = arrozconpollo;
-	//     arr["ceviche"] = ceviche;
-	//     arr.sort();//de menor a mayor
 	var arr = [
     ajidegallina,
     causarellena,
@@ -85,10 +78,6 @@ function	contar($li)
 }
 
 
-// function 
-//  		//Creamos la array donde metemos los numeros
-//  		var alzada = new Array();
-//  		alzada = [1.10, 1.67, 1.65, 1.68, 1.65];
  
 //  		//Funcion que calcula la moda, si hi han 2 repetits retorna un -1
 function calculamoda(array){
@@ -135,5 +124,15 @@ function calculamoda(array){
 	return moda;
 }
 
- 		// //Devolvemos la mediana de las alturas
- 		// document.write("<br>La moda es: " + moda(alzada));
+
+function reset(){
+	ajidegallina=0;
+	causarellena=0;
+	estofadodepollo=0;
+	rocotorelleno=0;
+	lomosaltado=0;
+	polloalabraza=0;
+	jaleamixta=0;
+ 	arrozconpollo=0;
+	ceviche=0;
+}
