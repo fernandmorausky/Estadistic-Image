@@ -23,59 +23,11 @@ function	contar($li)
 		case 'jaleamixta' 		:jaleamixta++;		break;
 		case 'arrozconpollo' 	:arrozconpollo++;	break;
 		case 'ceviche' 			:ceviche++;			break;
-	} 
+	}
+	loadData();
+} 
 
-
-	document.getElementById('ajidegallina').dataset.skill=ajidegallina*5;
-	document.getElementById('causarellena').dataset.skill=causarellena*5;
-	document.getElementById('estofadodepollo').dataset.skill=estofadodepollo*5;
-	document.getElementById('rocotorelleno').dataset.skill=rocotorelleno*5;
-	document.getElementById('lomosaltado').dataset.skill=lomosaltado*5;
-	document.getElementById('polloalabraza').dataset.skill=polloalabraza*5;
-	document.getElementById('jaleamixta').dataset.skill=jaleamixta*5;
-	document.getElementById('arrozconpollo').dataset.skill=arrozconpollo*5;
-	document.getElementById('ceviche').dataset.skill=ceviche*5;
-	 
-
-	 document.getElementById('ajidegallina').innerHTML=ajidegallina;
-	document.getElementById('causarellena').innerHTML=causarellena;
-	document.getElementById('estofadodepollo').innerHTML=estofadodepollo;
-	document.getElementById('rocotorelleno').innerHTML=rocotorelleno;
-	document.getElementById('lomosaltado').innerHTML=lomosaltado;
-	document.getElementById('polloalabraza').innerHTML=polloalabraza;
-	document.getElementById('jaleamixta').innerHTML=jaleamixta;
-	document.getElementById('arrozconpollo').innerHTML=arrozconpollo;
-	document.getElementById('ceviche').innerHTML=ceviche;
-
-
-
-	var arr = [
-    ajidegallina,
-    causarellena,
-    estofadodepollo,
-    rocotorelleno, 
-    lomosaltado,
-    polloalabraza,
-    jaleamixta,
-    arrozconpollo,
-    ceviche
-    ];
-    arr.sort();//de menor a mayor
-    var sum = arr.reduce(function(a, b) { return a + b; }, 0);
-    
-	var media=(sum)/9
-	media= media.toFixed(2);
-
-	var moda=calculamoda(arr);
-
-
-
-	var mediana=arr[4];
-
-	document.getElementById('media').innerHTML=media;
-	document.getElementById('moda').innerHTML=moda;
-	document.getElementById('mediana').innerHTML=mediana;
-}
+	
 
 
  
@@ -124,7 +76,61 @@ function calculamoda(array){
 	return moda;
 }
 
+function loadData()
+{
+	var increment =20;
+	 //document.getElementById('ajidegallina').dataset.skill=ajidegallina*5;
+	document.getElementById('ajidegallina').style.width=increment+ajidegallina  + "%";
+	document.getElementById('causarellena').style.width=increment+causarellena  + "%";
+	document.getElementById('estofadodepollo').style.width=increment+estofadodepollo  + "%";
+	document.getElementById('rocotorelleno').style.width=increment+rocotorelleno  + "%";
+	document.getElementById('lomosaltado').style.width=increment+lomosaltado  + "%";
+	document.getElementById('polloalabraza').style.width=increment+polloalabraza  + "%";
+	document.getElementById('jaleamixta').style.width=increment+jaleamixta  + "%";
+	document.getElementById('arrozconpollo').style.width=increment+arrozconpollo  + "%";
+	document.getElementById('ceviche').style.width=increment+ceviche  + "%";
+	 
 
+	 document.getElementById('ajidegallina').innerHTML=ajidegallina;
+	document.getElementById('causarellena').innerHTML=causarellena;
+	document.getElementById('estofadodepollo').innerHTML=estofadodepollo;
+	document.getElementById('rocotorelleno').innerHTML=rocotorelleno;
+	document.getElementById('lomosaltado').innerHTML=lomosaltado;
+	document.getElementById('polloalabraza').innerHTML=polloalabraza;
+	document.getElementById('jaleamixta').innerHTML=jaleamixta;
+	document.getElementById('arrozconpollo').innerHTML=arrozconpollo;
+	document.getElementById('ceviche').innerHTML=ceviche;
+
+
+
+	var arr = [
+    ajidegallina,
+    causarellena,
+    estofadodepollo,
+    rocotorelleno, 
+    lomosaltado,
+    polloalabraza,
+    jaleamixta,
+    arrozconpollo,
+    ceviche
+    ];
+    arr.sort();//de menor a mayor
+    var sum = arr.reduce(function(a, b) { return a + b; }, 0);
+    
+	var media=(sum)/9
+	media= media.toFixed(2);
+
+	var moda=calculamoda(arr);
+
+
+
+	var mediana=arr[4];
+
+	document.getElementById('media').innerHTML=media;
+	document.getElementById('moda').innerHTML=moda;
+	document.getElementById('mediana').innerHTML=mediana;
+
+}
 function reset(){
 	ajidegallina=0;
 	causarellena=0;
@@ -135,4 +141,16 @@ function reset(){
 	jaleamixta=0;
  	arrozconpollo=0;
 	ceviche=0;
+	loadData();
 }
+
+// 
+!function() {
+	  var h = document.querySelector('.rating-details-histogram');
+	  
+	  // setTimeout 0 is required to yeild so that the animation happens.  Maybe it's just better to use a CSS animation instead.
+	  window.setTimeout(function() {
+	    //h.classList.remove('collapsed');
+	  }, 0);
+	  
+}();

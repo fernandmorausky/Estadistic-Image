@@ -84,153 +84,113 @@ img:hover{
 	}
 }
 
-/*******************************************************************************/
+/**/
+
+@mixin histogram-styles($color) {
+  .histogram-label { color: $color; }
+  .histogram-bar   { background-color: $color; }
+}
+
+.rating-details-histogram {
+  max-width: 500px;
+  border-collapse: separate;
+  border-spacing: 0 9px;
+
+  /*
+   * 1. Force cell to take up all of the available space.
+   */
+  td {
+    width: 100%; // 1
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .histogram-label {
+    padding-right: 12px;
+  }
+
+  .histogram-bar {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 2px;
+    text-align: right;
+    color: white;
+    height: 30px;
+    line-height: 30px;
+    transform: none;
+    transition: all 0.4s ease-out;
+    transition-property: transform;
+  }
+
+  /*
+   * 1. Improves font smoothing for light text on dark backgrounds.
+   */
+  .text-inside {
+    font-smoothing: antialiased; // 1
+    font-weight: bold;
+    margin-right: 9px;
+  }
+
+  .text-outside {
+    vertical-align: middle;
+    margin-left: 3px;
+  }
+
+  /*
+   * This class exists so that removing it will cause the histogram bars to
+   * transition in all nice and pretty-like.
+   */
+  &.collapsed .histogram-bar {
+    transform: translate3d(-100%, 0, 0);
+  }
+
+
+  /** Bar colors */
+
+  
+  .n-8 { @include histogram-styles(#c41000); }
+  .n-7 { @include histogram-styles(#c41000); }
+  .n-6 { @include histogram-styles(#c41000); }
+  .n-5 { @include histogram-styles(#c41000); }
+  .n-4 { @include histogram-styles(#eb4a2f); }
+  .n-3 { @include histogram-styles(#ee8535); }
+  .n-2 { @include histogram-styles(#e5b643); }
+  .n-1 { @include histogram-styles(#b87c38); }
+  .n-0 { @include histogram-styles(#b87c38); }
+}
+
 body {
-	
+  margin: 40px;
 }
 
-·Charts {
-	 
-	margin:  auto;
-	background-color: #f9f9f9;
-	display: flex;
-	align-items: flex-end;
-	padding: 50px;
-	 
-	
-	&.horizontal {
-		display: block;
-	}
-	
-	&.horizontal &--serie {
-		display: block;
-		margin: 0 0 30px 0;
-		border: 0;
-		
-		label {
-			position: relative;
-			top: auto;
-			right: auto;
-			left: 0;
-			bottom: auto;
-			padding: 0 0 10px 0;
-		}
-	}
-	
-	&--serie {
-		height: 100%;
-		margin: 0 30px 0 0;
-		display: inline-block;
-		flex: 1;
-		display: flex;
-		align-items: flex-end;
-		transform-origin: 0 100%;
-		animation: slideUp .6s;
-		position: relative;
-		border-bottom: 1px solid #c2c2c2;
-		
-		&.stacked {
-			display: block;
-		}
-		
-		label {			
-			position: absolute;
-			left: 0;
-			right: 0;
-			bottom: -20px;
-			font-family: Helvetica, sans-serif;
-			font-size: 10px;
-			text-align: center;
-			color: #808080;
-		}
-	}
-	
-	&.horizontal &--item {
-		display: block;
-		border-radius: 0 2px 2px 0;
-		margin: 0 0 5px 0;
-		height: 1em;
-		
-		b {
-			position: absolute;
-			right: -20px;
-			top: .3em;
-		}
-	}
-	
-	&--item {
-		background-color: #43A19E;
-		display: inline-block;
-		margin: 0 5px 0 0;
-		flex: 1;
-		transition: height 1s ease-out, width 1s ease-out;
-		position: relative;
-		text-align: center;
-		border-radius: 2px 2px 0 0;
-		
-		&.layered {
-			position: absolute;
-			left: 5%;
-			right: 5%;
-			bottom: 0;
-			margin: 0;
-			
-			b {
-				position: absolute;
-				right: 0;
-			}
-		}
-		
-		&.stacked {
-			position: relative;
-			display: block;
-			border-radius: 0;
-		}
-		
-		b {
-			position: relative;
-			font-family: Helvetica, sans-serif;
-			font-size: 10px;
-			top: -20px;
-			color: #43A19E;
-		}
-	}
+.nowrap {
+  white-space: nowrap;
 }
 
-.Legend {
-	&--color {
-		display: inline-block;
-		vertical-align: middle;
-		border-radius: 2px;
-		width: 16px;
-		height: 16px;
-	}
-	
-	&--label {
-		display: inline-block;
-		vertical-align: middle;
-		font-family: Helvetica, sans-serif;
-		font-size: 12px;
-		margin: 0 0 0 5px;
-	}
+td {
+  padding: 3px;
 }
 
-@keyframes slideUp {
-	from { transform: scaleY(0); }
-	to { transform: scaleY(1); }
-}
+
+
+/*
+
+stadistics
+
+*/
+
 
 #shiva
 {
-	width: 100px;
+  width: 100px;
 	height: 100px;
 	background: red;
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
 	border-radius: 50px;
-	float:left;
-	left: 40%;
-	margin:5px;
+  float:left;
+  margin:5px;
 }
 .count
 {
@@ -239,18 +199,13 @@ body {
   margin-left:30px;
   font-size:25px;
 }
-.label
+
+#datagrams
 {
-	width: 110px;
-	height: 50;
-	background: red; 
-	float:left; 
-	text-align: center;
-
-}
-.stadistics
-{ 
-
-	 position: absolute;
-	 left: 40%;
+	position: absolute;
+  /*background-color: #234567;*/
+    left: 45%;
+    width: 300px;
+    border: 3px solid #73AD21;
+    padding: 10px;
 }
