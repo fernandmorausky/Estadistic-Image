@@ -47,11 +47,11 @@ h1{
 }
 #carousel figure{
 	display: block;
-	position: absolute;
+	position: fixed;
 	width: 186px;
 	height: 116px;
-	left: 10px;
-	top: 10px;
+	left: 2px;
+	top: 2px;
 	background: black;
 	overflow: hidden;
 	border: solid 5px black;
@@ -93,7 +93,7 @@ img:hover{
 }
 
 .rating-details-histogram {
-  max-width: 500px;
+  max-width: 100px;
   border-collapse: separate;
   border-spacing: 0 9px;
 
@@ -162,7 +162,7 @@ img:hover{
 }
 
 body {
-  margin: 40px;
+  //margin: 40px;
 }
 
 .nowrap {
@@ -204,15 +204,14 @@ stadistics
 #datagrams
 {
 	position: absolute;
-  /*background-color: #234567;*/
-    //left: 25%;
+  
     width: 100%;
     border: 3px solid #73AD21;
     padding: 10px;
 }
 .label{
-  line-height: 100px;
+  line-height: 100%;
   color:green;
-  margin-left:30px;
+  margin-left:20px;
   font-size:25px;
 }
